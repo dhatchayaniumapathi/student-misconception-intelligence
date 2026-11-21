@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Student Misconception Intelligence System | School ERP</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- School ERP Top Navigation Header -->
+  <header class="erp-header">
+    <div class="erp-header-inner">
+      <div class="erp-brand">
+        <div class="erp-logo-icon">M</div>
+        <div class="erp-brand-text">
+          <h1>Green Valley International School ERP</h1>
+          <p>Academic Intelligence &bull; Student Misconception Diagnostic Module</p>
+        </div>
+      </div>
+      <div class="erp-user-badge">
+        <div class="user-info">
+          <div class="user-name">Ms. Sunita Rao</div>
+          <div class="user-role">Mathematics Teacher &bull; Class 7-B</div>
+        </div>
+        <div class="user-avatar">SR</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Workspace -->
+  <main class="erp-container">
+
+    <!-- Fictional Student Information Banner -->
+    <section class="student-banner-card" aria-label="Student Profile Banner">
+      <div class="student-meta-group">
+        <div class="student-badge-icon">&#128100;</div>
+        <div class="student-title-block">
+          <h2 id="erp-student-name">Aarav Sharma</h2>
+          <div class="student-meta-line" id="erp-student-meta">Class 7 - Sec B | Roll No: 24 | ID: GVIS-2026-0842</div>
+        </div>
+      </div>
+
+      <div class="student-status-group">
+        <div class="student-info-item">
+          <span class="student-info-label">Subject</span>
+          <span class="student-info-val" id="erp-student-subject">Grade 7 Mathematics</span>
+        </div>
+        <div class="student-info-item">
+          <span class="student-info-label">Faculty Mentor</span>
+          <span class="student-info-val" id="erp-student-teacher">Ms. Sunita Rao</span>
+        </div>
+        <div class="student-info-item">
+          <span class="student-info-label">Diagnostic Date</span>
+          <span class="student-info-val" id="erp-assessment-date">21 Nov 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step ERP Section Navigation Tabs -->
+    <nav class="erp-nav-tabs" aria-label="Assessment and Diagnostic Steps">
+      <button type="button" class="nav-tab active" data-tab="assessment">
+        <span class="tab-number">1</span>
+        <span>Student Assessment</span>
+      </button>
+      <button type="button" class="nav-tab disabled" data-tab="analysis">
+        <span class="tab-number">2</span>
+        <span>AI Misconception Analysis</span>
+      </button>
+      <button type="button" class="nav-tab disabled" data-tab="coaching">
+        <span class="tab-number">3</span>
+        <span>Teacher Coaching Report</span>
+      </button>
+      <button type="button" class="nav-tab disabled" data-tab="improvement">
+        <span class="tab-number">4</span>
+        <span>Improvement Report</span>
+      </button>
+    </nav>
+
+    <!-- SECTION 1: STUDENT ASSESSMENT -->
+    <section id="section-assessment" class="erp-section">
+      <div class="section-panel">
+        <div class="section-header-row">
+          <div class="section-title-wrap">
+            <h3>1. Initial Mathematics Diagnostic Assessment</h3>
+            <p class="section-subtitle">Answer all 5 questions below. The diagnostic engine maps student selections to pinpoint specific learning misconceptions.</p>
+          </div>
+          <div class="button-group">
+            <button type="button" id="btn-prefill-test1" class="btn btn-secondary btn-sm" title="Pre-fill answers illustrating typical student misconceptions">
+              &#9889; Pre-fill Sample Errors (Demo)
+            </button>
+            <button type="button" id="btn-clear-test1" class="btn btn-secondary btn-sm">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <form id="form-assessment-1">
+          <!-- Dynamic Question List Rendered from questions.js -->
+          <div id="assessment-questions-list" class="questions-list"></div>
+
+          <div class="form-actions-bar">
+            <span class="text-muted" style="font-size: 13px;">Ensure all 5 questions have an answer selected before running diagnostic analysis.</span>
+            <button type="submit" class="btn btn-primary" id="btn-submit-test1">
+              Submit Assessment &amp; Run Diagnostic &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECTION 2: AI MISCONCEPTION ANALYSIS -->
+    <section id="section-analysis" class="erp-section hidden">
+      <div class="section-panel">
+        <div class="section-header-row">
+          <div class="section-title-wrap">
+            <h3>2. AI Misconception Analysis Report</h3>
+            <p class="section-subtitle">Detailed cognitive diagnosis for Aarav Sharma based on assessment distractor response patterns.</p>
+          </div>
+          <div class="button-group">
+            <button type="button" class="btn btn-teal btn-sm" id="btn-to-coaching">
+              View Teacher Coaching Report &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Prototype Demonstration Notice (Explicitly required) -->
+        <div class="prototype-demo-banner">
+          <div class="demo-banner-icon">&#9432;</div>
+          <div class="demo-banner-content">
+            <strong>Prototype Demonstration:</strong> The misconception intelligence shown below is evaluated using a curated JavaScript-based diagnostic rule matrix. It maps student choices across 4 key pedagogical categories: <em>Conceptual gap</em>, <em>Formula confusion</em>, <em>Application difficulty</em>, and <em>Careless error</em>.
+          </div>
+        </div>
+
+        <!-- High-level Diagnostic Score Overview -->
+        <div class="score-summary-card">
+          <div class="score-metric-box">
+            <div>
+              <span class="student-info-label">Diagnostic Score</span>
+              <div class="score-big" id="analysis-score-badge">0 / 5</div>
+            </div>
+            <div class="score-pct" id="analysis-percentage">0%</div>
+          </div>
+
+          <div class="misconception-stat-box">
+            <span class="misconception-stat-num" id="analysis-misconceptions-count">0</span>
+            <span class="misconception-stat-label">Misconceptions Identified</span>
+          </div>
+
+          <div>
+            <span class="student-info-label">Categories Detected</span>
+            <div class="category-pills-row" id="category-counts-summary"></div>
+          </div>
+        </div>
+
+        <!-- Detailed Breakdown Cards for Each Incorrect/Correct Item -->
+        <div id="analysis-cards-container"></div>
+
+        <div class="form-actions-bar">
+          <button type="button" class="btn btn-secondary" onclick="switchTab('assessment')">
+            &larr; Back to Assessment
+          </button>
+          <button type="button" class="btn btn-primary" onclick="switchTab('coaching')">
+            Proceed to Teacher Coaching Report &rarr;
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TEACHER COACHING REPORT -->
+    <section id="section-coaching" class="erp-section hidden">
+      <div class="section-panel">
+        <div class="section-header-row">
+          <div class="section-title-wrap">
+            <h3>3. Teacher Coaching &amp; Remediation Plan</h3>
+            <p class="section-subtitle">Actionable guidance for Ms. Sunita Rao targeting Aarav Sharma's diagnosed weak areas with classroom interventions.</p>
+          </div>
+          <div class="button-group">
+            <button type="button" class="btn btn-teal btn-sm" id="btn-to-retest">
+              Take Retest &amp; Check Improvement &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Weak Area Coaching Cards -->
+        <div id="coaching-weak-areas"></div>
+
+        <!-- ERP Teacher Intervention Checklist and Notes -->
+        <div class="teacher-actions-panel">
+          <h4 style="font-size: 15px; color: var(--primary-blue); margin-bottom: 8px;">Faculty Intervention Documentation</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Document coaching steps taken before administering the second parallel assessment.</p>
+
+          <label for="teacher-notes-field" style="font-size: 12px; font-weight: 700; color: var(--text-secondary); text-transform: uppercase;">Teacher Observational Notes:</label>
+          <textarea id="teacher-notes-field" class="teacher-notes-area" rows="3" placeholder="Enter notes on student response to explanations, models used, and readiness for retest..."></textarea>
+
+          <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
+            <button type="button" id="btn-save-notes" class="btn btn-secondary btn-sm">
+              Save Note to Student ERP File
+            </button>
+          </div>
+        </div>
+
+        <div class="form-actions-bar">
+          <button type="button" class="btn btn-secondary" onclick="switchTab('analysis')">
+            &larr; Back to Analysis
+          </button>
+          <button type="button" class="btn btn-primary" onclick="switchTab('improvement')">
+            Proceed to Retest &amp; Improvement &rarr;
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: IMPROVEMENT REPORT -->
+    <section id="section-improvement" class="erp-section hidden">
+      <div class="section-panel">
+        <div class="section-header-row">
+          <div class="section-title-wrap">
+            <h3>4. Improvement Report &amp; Parallel Retest</h3>
+            <p class="section-subtitle">Second assessment featuring isomorphic problems to measure misconception resolution and compare pre/post scores.</p>
+          </div>
+          <div class="button-group">
+            <button type="button" id="btn-prefill-retest" class="btn btn-secondary btn-sm" title="Pre-fill answers showing student mastery after teacher coaching">
+              &#10003; Pre-fill Retest Mastery (5/5 Demo)
+            </button>
+            <button type="button" id="btn-clear-retest" class="btn btn-secondary btn-sm">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="retest-instructions">
+          <strong>Retest Administration Protocol:</strong> Aarav Sharma is administered these 5 parallel mathematics problems following Ms. Sunita Rao's coaching sessions. Submit the retest to generate the comparative improvement analytics.
+        </div>
+
+        <!-- Retest Form -->
+        <form id="form-retest">
+          <div id="retest-questions-list" class="questions-list"></div>
+
+          <div class="form-actions-bar">
+            <span class="text-muted" style="font-size: 13px;">Submit all answers to evaluate the comparative improvement metrics.</span>
+            <button type="submit" class="btn btn-teal" id="btn-submit-retest">
+              Submit Retest &amp; Calculate Improvement &rarr;
+            </button>
+          </div>
+        </form>
+
+        <!-- Comparative Improvement Report (Revealed after Retest submission) -->
+        <div id="improvement-comparison-view" class="comparison-hero hidden" style="margin-top: 32px;">
+          <h4 style="font-size: 17px; color: var(--primary-blue); margin-bottom: 6px;">Comparative Improvement Analysis</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">Direct comparison between Initial Assessment and Post-Coaching Retest performance.</p>
+
+          <div class="comparison-stats-grid">
+            <div class="stat-column">
+              <span class="stat-column-label">Initial Assessment (Test 1)</span>
+              <span class="stat-column-value" id="t1-summary-score">0 / 5 (0%)</span>
+            </div>
+
+            <div class="stat-column">
+              <span class="stat-column-label">Post-Coaching Retest (Test 2)</span>
+              <span class="stat-column-value" id="t2-summary-score" style="color: var(--accent-teal);">0 / 5 (0%)</span>
+            </div>
+
+            <div class="stat-column">
+              <span class="stat-column-label">Net Score Growth</span>
+              <div>
+                <span id="improvement-delta-badge" class="metric-delta delta-positive">+0%</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="improvement-status-callout" style="margin-bottom: 20px;"></div>
+
+          <h5 style="font-size: 14px; font-weight: 700; color: var(--text-secondary); margin-bottom: 10px;">Topic-by-Topic Misconception Resolution Matrix</h5>
+          <div class="comparison-table-wrapper">
+            <table class="erp-table">
+              <thead>
+                <tr>
+                  <th>Topic / Skill</th>
+                  <th>Test 1 Diagnostic Status</th>
+                  <th>Retest Result</th>
+                  <th>Resolution Status</th>
+                </tr>
+              </thead>
+              <tbody id="comparison-table-body"></tbody>
+            </table>
+          </div>
+
+          <div class="form-actions-bar" style="margin-top: 24px;">
+            <div class="button-group">
+              <button type="button" id="btn-print-report" class="btn btn-secondary">
+                &#128438; Print / Save PDF
+              </button>
+              <button type="button" id="btn-reset-prototype" class="btn btn-secondary">
+                &#8634; Reset Prototype
+              </button>
+            </div>
+            <span class="badge badge-resolved" style="padding: 6px 12px; font-size: 13px;">
+              &#10003; Data synchronized with School ERP Record
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Clean ERP Footer -->
+  <footer class="erp-footer">
+    <div class="erp-container" style="margin: 0 auto;">
+      <p><strong>AI-Powered Student Misconception Intelligence System (Prototype MVP)</strong></p>
+      <p>Designed for School ERP Integration &bull; Built with HTML, CSS, and Vanilla JavaScript</p>
+      <p style="color: var(--text-muted); font-size: 11px; margin-top: 4px;">Prototype Demonstration &bull; Local Browser Execution Ready</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

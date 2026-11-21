@@ -75,11 +75,4 @@ Misconception-erp/
 
 ---
 
-## 🚀 How to Run Locally
 
-1. Navigate to the project directory:
-   ```bash
-   cd c:\Users\asus\Misconception-erp
-   ```
-2. Double-click `index.html` or open it with any modern web browser (Google Chrome, Microsoft Edge, Mozilla Firefox, Safari).
-3. No server installation, Node.js packages, or build steps required!
